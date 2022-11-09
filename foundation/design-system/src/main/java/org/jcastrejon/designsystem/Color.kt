@@ -1,4 +1,4 @@
-package org.jcastrejon.budgettracker.ui.theme
+package org.jcastrejon.designsystem
 
 import androidx.compose.ui.graphics.Color
 

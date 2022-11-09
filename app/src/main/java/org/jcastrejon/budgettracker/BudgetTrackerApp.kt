@@ -1,7 +1,7 @@
 package org.jcastrejon.budgettracker
 
 import androidx.compose.runtime.Composable
-import org.jcastrejon.budgettracker.ui.theme.BudgetTrackerTheme
+import org.jcastrejon.designsystem.BudgetTrackerTheme
 
 @Composable
 fun BudgetTrackerApp() {

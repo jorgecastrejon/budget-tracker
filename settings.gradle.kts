@@ -14,3 +14,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "BudgetTracker"
 include(":app")
+include(":foundation:design-system")

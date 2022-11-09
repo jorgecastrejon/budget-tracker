@@ -1,33 +1,23 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
 
-val compose_version = rootProject.extra["compose_version"]
-
 android {
-    namespace = "org.jcastrejon.budgettracker"
+    namespace = "org.jcastrejon.designsystem"
     compileSdk = Integer.parseInt(libs.versions.androidComplieSdk.get())
 
     defaultConfig {
-        applicationId = "org.jcastrejon.budgettracker"
         minSdk = Integer.parseInt(libs.versions.androidMinSdk.get())
         targetSdk = Integer.parseInt(libs.versions.androidTargetSdk.get())
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
-        debug {
-            applicationIdSuffix = ".debug"
-        }
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
@@ -44,22 +34,26 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
-    packagingOptions {
-        resources {
-            excludes.add("/META-INF/{AL2.0,LGPL2.1}")
-        }
-    }
 }
 
 dependencies {
-    implementation(project(":foundation:design-system"))
 
     implementation(libs.android.material)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.core.splashscreen)
-    testImplementation ("junit:junit:4.13.2")
-    androidTestImplementation ("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
-    androidTestImplementation ("androidx.compose.ui:ui-test-junit4:1.3.0")
+    api(libs.androidx.compose.activity)
+    api(libs.androidx.compose.navigation)
+    api(libs.androidx.compose.foundation)
+    api(libs.androidx.compose.material.icons)
+    api(libs.androidx.compose.material.icons.extended)
+    api(libs.androidx.compose.material3)
+    api(libs.androidx.compose.ui)
+    api(libs.androidx.compose.ui.graphics)
+    debugApi(libs.androidx.compose.ui.tooling)
+    api(libs.androidx.compose.ui.tooling.preview)
+
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.3")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+
 }

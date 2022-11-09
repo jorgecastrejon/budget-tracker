@@ -1,4 +1,4 @@
-package org.jcastrejon.budget_tracker.ui.theme
+package org.jcastrejon.budgettracker.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

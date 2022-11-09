@@ -6,11 +6,11 @@ plugins {
 val compose_version = rootProject.extra["compose_version"]
 
 android {
-    namespace = "org.jcastrejon.budget_tracker"
+    namespace = "org.jcastrejon.budgettracker"
     compileSdk = Integer.parseInt(libs.versions.androidComplieSdk.get())
 
     defaultConfig {
-        applicationId = "org.jcastrejon.budget_tracker"
+        applicationId = "org.jcastrejon.budgettracker"
         minSdk = Integer.parseInt(libs.versions.androidMinSdk.get())
         targetSdk = Integer.parseInt(libs.versions.androidTargetSdk.get())
         versionCode = 1

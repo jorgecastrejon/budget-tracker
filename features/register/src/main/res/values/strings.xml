@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="register_create_password">Create your Password</string>
+    <string name="register_password_label">Password</string>
+    <string name="register_confirm_password_label">Confirm Password</string>
+    <string name="register_password_placeholder">Write your password</string>
+    <string name="register_confirm_password_placeholder">Write your password again</string>
+    <string name="register_button">Start</string>
+    <string name="register_authenticate_each_session">Authenticate each session</string>
+    <string name="register_error">Passwords do not match</string>
+    <string name="register_error_field_empty">Field must not be empty</string>
+    <string name="register_error_field_length">Field must contains at least 6 characters</string>
+    <string name="register_error_field_match">Fields must be the same</string>
+</resources>

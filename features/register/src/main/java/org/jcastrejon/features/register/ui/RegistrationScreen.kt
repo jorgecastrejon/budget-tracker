@@ -241,6 +241,7 @@ fun RegistrationContent(
             Text(
                 text = stringResource(id = R.string.register_authenticate_each_session),
                 style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
         Spacer(modifier = Modifier.height(12.dp))

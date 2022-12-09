@@ -152,18 +152,8 @@ fun RegistrationContent(
             keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Next),
             visualTransformation = if (!isPasswordVisible) PasswordVisualTransformation() else None,
             textStyle = MaterialTheme.typography.bodyMedium,
-            label = {
-                Text(
-                    text = stringResource(id = R.string.register_password_label),
-                    style = MaterialTheme.typography.labelMedium,
-                )
-            },
-            placeholder = {
-                Text(
-                    text = stringResource(id = R.string.register_password_placeholder),
-                    style = MaterialTheme.typography.bodyMedium,
-                )
-            },
+            label = { Text(text = stringResource(id = R.string.register_password_label)) },
+            placeholder = { Text(text = stringResource(id = R.string.register_password_placeholder)) },
             trailingIcon = {
                 Icon(
                     modifier = Modifier
@@ -192,18 +182,8 @@ fun RegistrationContent(
             keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Next),
             visualTransformation = if (!isConfirmPasswordVisible) PasswordVisualTransformation() else None,
             textStyle = MaterialTheme.typography.bodyMedium,
-            label = {
-                Text(
-                    text = stringResource(id = R.string.register_confirm_password_label),
-                    style = MaterialTheme.typography.labelMedium,
-                )
-            },
-            placeholder = {
-                Text(
-                    text = stringResource(id = R.string.register_confirm_password_placeholder),
-                    style = MaterialTheme.typography.bodyMedium,
-                )
-            },
+            label = { Text(text = stringResource(id = R.string.register_confirm_password_label)) },
+            placeholder = { Text(text = stringResource(id = R.string.register_confirm_password_placeholder)) },
             trailingIcon = {
                 Icon(
                     modifier = Modifier
@@ -253,9 +233,9 @@ fun RegistrationContent(
             shape = RoundedCornerShape(8.dp),
             enabled = registrationState.isValid && registrationState.isLoading.not(),
             onClick = {
-                onButtonClicked()
                 keyboardController?.hide()
                 focusManager.clearFocus()
+                onButtonClicked()
 
             }
         ) {

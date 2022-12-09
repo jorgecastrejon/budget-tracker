@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_introduce_password">Introduce your Password</string>
+    <string name="login_error">Password is incorrect</string>
+    <string name="login_password_label">Password</string>
+    <string name="login_password_placeholder">Write your password</string>
+    <string name="login_button">Continue</string>
+    <string name="login_error_field_length">Field must contains at least 6 characters</string>
+    <string name="login_fingerprint_title">Fingerprint for Budget Tracker</string>
+    <string name="login_fingerprint_subtitle">Log in using your biometric credential</string>
+    <string name="login_fingerprint_negative_button">Cancel</string>
+    <string name="login_fingerprint_content_description">Shows the fingerprint authenticator</string>
+</resources>

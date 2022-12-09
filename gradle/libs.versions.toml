@@ -4,6 +4,7 @@ androidMaterial = "1.7.0"
 androidMinSdk = "24"
 androidTargetSdk = "33"
 androidxAppCompat = "1.5.1"
+androidxBiometric = "1.1.0"
 androidxCore = "1.9.0"
 androidxCrypto = "1.0.0"
 androidxDatastore = "1.0.0"
@@ -24,6 +25,7 @@ kotlinSerialization = "1.4.1"
 [libraries]
 android-material = { group = "com.google.android.material", name = "material", version.ref = "androidMaterial" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppCompat" }
+androidx-biometric = { group = "androidx.biometric", name = "biometric", version.ref = "androidxBiometric" }
 androidx-compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "composeActivity" }
 androidx-compose-animation-graphics = { group = "androidx.compose.animation", name = "animation-graphics", version.ref = "compose" }
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "compose" }

@@ -15,6 +15,7 @@ dependencyResolutionManagement {
 rootProject.name = "BudgetTracker"
 include(":app")
 include(":core:user")
+include(":features:login")
 include(":features:register")
 include(":foundation:design-system")
 include(":libraries:database")

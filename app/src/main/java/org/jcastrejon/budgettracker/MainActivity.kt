@@ -9,7 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import org.jcastrejon.features.register.navigation.RegistrationFeatureRoute
+import org.jcastrejon.budgettracker.navigation.BudgetTrackerScreen
 import org.jcastrejon.user.User
 import org.jcastrejon.user.UserManager
 import javax.inject.Inject
@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
 
 private fun User?.asInitialRoute(): String =
     when {
-        this == null -> RegistrationFeatureRoute
-        authenticateEachSession -> ""
-        else -> ""
+        this == null -> BudgetTrackerScreen.Registration()
+        authenticateEachSession -> BudgetTrackerScreen.Login()
+        else -> "temporary"
     }

@@ -16,7 +16,9 @@ import org.jcastrejon.database.crypto.CipherProvider
 import org.jcastrejon.database.crypto.Crypto
 import org.jcastrejon.database.crypto.CryptoImpl
 import org.jcastrejon.database.serializer.SecuredSerialized
+import org.jcastrejon.user.AreCredentialsValid
 import org.jcastrejon.user.CreateUser
+import org.jcastrejon.user.IsFingerprintEnabled
 import org.jcastrejon.user.User
 import org.jcastrejon.user.UserManager
 import java.io.File
@@ -30,6 +32,22 @@ object UserModule {
     private const val SecuredFileName = "secured_file_name_b.json"
     private const val KeyStoreName = "AndroidKeyStore"
     private const val KeyName = "DataKey"
+
+    @Provides
+    fun provideAreCredentialsValid(
+        userManager: UserManager,
+    ): AreCredentialsValid =
+        AreCredentialsValid(
+            userManager = userManager
+        )
+
+    @Provides
+    fun provideIsFingerprintEnabled(
+        userManager: UserManager,
+    ): IsFingerprintEnabled =
+        IsFingerprintEnabled(
+            userManager = userManager
+        )
 
     @Provides
     fun provideCreateUser(

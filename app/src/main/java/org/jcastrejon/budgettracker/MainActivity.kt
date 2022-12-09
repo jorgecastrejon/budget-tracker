@@ -10,17 +10,23 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.jcastrejon.features.register.navigation.RegistrationFeatureRoute
+import org.jcastrejon.user.User
+import org.jcastrejon.user.UserManager
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var userManager: UserManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val splashScreen = installSplashScreen()
         var destination: String? = null
 
         lifecycleScope.launch(Dispatchers.Default) {
-            // todo update once UserManager is introduced
-            destination = RegistrationFeatureRoute
+            destination = userManager.get().asInitialRoute()
         }
 
         splashScreen.setKeepOnScreenCondition(condition = { destination == null })
@@ -30,3 +36,10 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+private fun User?.asInitialRoute(): String =
+    when {
+        this == null -> RegistrationFeatureRoute
+        authenticateEachSession -> ""
+        else -> ""
+    }

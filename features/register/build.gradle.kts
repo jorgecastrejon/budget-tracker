@@ -45,6 +45,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:user"))
     implementation(project(":foundation:design-system"))
 
     implementation(libs.android.material)

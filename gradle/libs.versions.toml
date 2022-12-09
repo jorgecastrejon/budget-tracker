@@ -5,6 +5,8 @@ androidMinSdk = "24"
 androidTargetSdk = "33"
 androidxAppCompat = "1.5.1"
 androidxCore = "1.9.0"
+androidxCrypto = "1.0.0"
+androidxDatastore = "1.0.0"
 androidxLifecycle = "2.5.1"
 androidxLifecycleCompose = "2.6.0-alpha03"
 androidxSplashScreen = "1.0.0"
@@ -16,6 +18,8 @@ composeNavigation = "2.5.3"
 hilt = "2.44"
 hiltNavigation = "1.0.0"
 kotlin = "1.7.20"
+kotlinCoroutines = "1.6.4"
+kotlinSerialization = "1.4.1"
 
 [libraries]
 android-material = { group = "com.google.android.material", name = "material", version.ref = "androidMaterial" }
@@ -34,9 +38,13 @@ androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "compose" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "androidxSplashScreen" }
+androidx-datastore = { group = "androidx.datastore", name = "datastore-core", version.ref = "androidxDatastore" }
 androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidxLifecycle" }
 androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidxLifecycleCompose" }
 androidx-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "androidxLifecycle" }
+androidx-security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "androidxCrypto" }
 dagger-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 dagger-hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigation" }
+kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinCoroutines" }
+kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinSerialization" }

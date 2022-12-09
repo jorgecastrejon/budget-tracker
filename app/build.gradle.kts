@@ -54,16 +54,20 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:user"))
     implementation(project(":features:register"))
     implementation(project(":foundation:design-system"))
+    implementation(project(":libraries:database"))
 
     implementation(libs.android.material)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.core.splashscreen)
+    implementation(libs.androidx.datastore)
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.hilt.compiler)
     implementation(libs.dagger.hilt.navigation)
+    implementation(libs.kotlinx.serialization)
     testImplementation ("junit:junit:4.13.2")
     androidTestImplementation ("androidx.test.ext:junit:1.1.3")
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")

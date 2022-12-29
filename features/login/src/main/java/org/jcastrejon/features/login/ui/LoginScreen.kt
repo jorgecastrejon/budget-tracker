@@ -47,10 +47,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalFocusManager
-import androidx.compose.ui.platform.LocalLifecycleOwner
-import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.platform.*
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -67,6 +64,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.jcastrejon.features.login.R
+import org.jcastrejon.features.login.ui.LoginTestTag.CONTINUE_BUTTON
+import org.jcastrejon.features.login.ui.LoginTestTag.FINGERPRINT_ICON
+import org.jcastrejon.features.login.ui.LoginTestTag.PASSWORD_FIELD
 
 @Composable
 fun LoginScreen(
@@ -158,6 +158,7 @@ fun LoginContent(
 
             OutlinedTextField(
                 modifier = Modifier
+                    .testTag(PASSWORD_FIELD)
                     .fillMaxWidth()
                     .padding(horizontal = 16.dp),
                 value = loginState.password,
@@ -187,6 +188,7 @@ fun LoginContent(
             Spacer(modifier = Modifier.height(8.dp))
             Button(
                 modifier = Modifier
+                    .testTag(CONTINUE_BUTTON)
                     .fillMaxWidth()
                     .height(56.dp)
                     .padding(horizontal = 16.dp),
@@ -204,9 +206,10 @@ fun LoginContent(
                 )
             }
         }
-        AnimatedVisibility(visible =  isFingerprintSupported) {
+        AnimatedVisibility(visible =  isFingerprintSupported && loginState.isFingerPrintEnabled) {
             Icon(
                 modifier = Modifier
+                    .testTag(FINGERPRINT_ICON)
                     .navigationBarsPadding()
                     .padding(8.dp)
                     .clip(CircleShape)

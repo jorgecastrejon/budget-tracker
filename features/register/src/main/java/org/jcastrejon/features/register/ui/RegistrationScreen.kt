@@ -42,10 +42,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalFocusManager
-import androidx.compose.ui.platform.LocalLifecycleOwner
-import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.platform.*
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -61,6 +58,10 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.jcastrejon.features.register.R
+import org.jcastrejon.features.register.ui.RegisterTestTag.CHECKBOX
+import org.jcastrejon.features.register.ui.RegisterTestTag.CONFIRM_PASSWORD_FIELD
+import org.jcastrejon.features.register.ui.RegisterTestTag.PASSWORD_FIELD
+import org.jcastrejon.features.register.ui.RegisterTestTag.START_BUTTON
 
 @Composable
 fun RegistrationScreen(
@@ -144,6 +145,7 @@ fun RegistrationContent(
 
         OutlinedTextField(
             modifier = Modifier
+                .testTag(PASSWORD_FIELD)
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp),
             value = registrationState.password,
@@ -174,6 +176,7 @@ fun RegistrationContent(
 
         OutlinedTextField(
             modifier = Modifier
+                .testTag(CONFIRM_PASSWORD_FIELD)
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp),
             value = registrationState.confirmPassword,
@@ -211,6 +214,7 @@ fun RegistrationContent(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Checkbox(
+                modifier = Modifier.testTag(CHECKBOX),
                 checked = registrationState.authenticateEverySession,
                 onCheckedChange = { value -> onSessionCheckBoxChanged(value) },
                 colors = CheckboxDefaults.colors(
@@ -227,6 +231,7 @@ fun RegistrationContent(
         Spacer(modifier = Modifier.height(12.dp))
         Button(
             modifier = Modifier
+                .testTag(START_BUTTON)
                 .fillMaxWidth()
                 .height(56.dp)
                 .padding(horizontal = 16.dp),

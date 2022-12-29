@@ -23,6 +23,8 @@ Simple expense tracker
 * [Kotlin Serialization](https://kotlinlang.org/docs/serialization.html) Provides sets of libraries for various platforms and serialization formats
 * [Android Security Crypto](https://developer.android.com/jetpack/androidx/releases/security) Safely manage keys and encrypt files
 * [Android Biometric](https://developer.android.com/jetpack/androidx/releases/biometric) Authenticate with biometrics or device credentials
+* [Robolectric](https://robolectric.org) Framework to run tests in a simulated Android environment inside a JVM
+* [Mockk](https://mockk.io) Mocking library for Kotlin
 
 # Architecture
 MVVM (TBA)

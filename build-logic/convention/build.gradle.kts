@@ -24,6 +24,10 @@ gradlePlugin {
             id = "budget-tracker.android.compose"
             implementationClass = "AndroidComposeConventionPlugin"
         }
+        register("androidFeature") {
+            id = "budget-tracker.android.feature"
+            implementationClass = "AndroidFeatureConventionPlugin"
+        }
         register("androidHilt") {
             id = "budget-tracker.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"

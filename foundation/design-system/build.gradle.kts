@@ -1,16 +1,13 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id("budget-tracker.android.library")
+    id("budget-tracker.jetbrains.kotlin.android")
+    id("budget-tracker.android.compose")
 }
 
 android {
     namespace = "org.jcastrejon.designsystem"
-    compileSdk = Integer.parseInt(libs.versions.androidComplieSdk.get())
 
     defaultConfig {
-        minSdk = Integer.parseInt(libs.versions.androidMinSdk.get())
-        targetSdk = Integer.parseInt(libs.versions.androidTargetSdk.get())
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -20,19 +17,6 @@ android {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
 }
 
@@ -52,8 +36,6 @@ dependencies {
     debugApi(libs.androidx.compose.ui.tooling)
     api(libs.androidx.compose.ui.tooling.preview)
 
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
-
+    testImplementation(libs.androidx.test.junit)
+    testImplementation(libs.junit)
 }

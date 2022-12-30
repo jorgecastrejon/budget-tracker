@@ -1,6 +1,8 @@
 package org.jcastrejon.features.register.ui
 
 import android.content.res.Resources
+import androidx.activity.compose.ReportDrawnAfter
+import androidx.activity.compose.ReportDrawnWhen
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -44,6 +46,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.*
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTagsAsResourceId
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation.Companion.None
@@ -119,9 +123,11 @@ fun RegistrationContent(
     onSessionCheckBoxChanged: (Boolean) -> Unit,
     onButtonClicked: () -> Unit
 ) {
+    ReportDrawnAfter(block = {})
     val focusManager = LocalFocusManager.current
     Column(
         modifier = modifier
+            .semantics { testTagsAsResourceId = true }
             .fillMaxSize()
             .imePadding()
             .background(MaterialTheme.colorScheme.background)

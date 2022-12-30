@@ -11,12 +11,13 @@ androidxCrypto = "1.0.0"
 androidxDatastore = "1.0.0"
 androidxLifecycle = "2.5.1"
 androidxLifecycleCompose = "2.6.0-alpha03"
+androidxProfileinstaller = "1.3.0-alpha02"
 androidxSplashScreen = "1.0.0"
 androidxTestEspressoCore = "3.5.0"
 androidxTestJunit = "1.1.4"
 compose = "1.3.0"
 composeCompiler = "1.3.2"
-composeActivity = "1.6.1"
+composeActivity = "1.7.0-alpha02"
 composeMaterial = "1.0.0"
 composeNavigation = "2.5.3"
 hilt = "2.44"
@@ -52,6 +53,7 @@ androidx-datastore = { group = "androidx.datastore", name = "datastore-core", ve
 androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidxLifecycle" }
 androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidxLifecycleCompose" }
 androidx-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "androidxLifecycle" }
+androidx-profileinstaller = { group = "androidx.profileinstaller", name = "profileinstaller", version.ref = "androidxProfileinstaller" }
 androidx-security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "androidxCrypto" }
 androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxTestEspressoCore" }
 androidx-test-junit = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidxTestJunit" }

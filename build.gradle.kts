@@ -10,4 +10,5 @@ plugins {
     id("org.jetbrains.kotlin.android") version "1.7.20" apply false
     id("org.jetbrains.kotlin.jvm") version "1.7.20" apply false
     id("org.jetbrains.kotlin.plugin.serialization") version "1.7.20" apply false
+    id("com.android.test") version "7.4.0-rc03" apply false
 }

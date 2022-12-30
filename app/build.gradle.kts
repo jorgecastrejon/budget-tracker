@@ -20,6 +20,14 @@ android {
         debug {
             applicationIdSuffix = ".debug"
         }
+        create("benchmark") {
+            initWith(getByName("release"))
+            signingConfig = signingConfigs.getByName("debug")
+            matchingFallbacks += listOf("release")
+            isDebuggable = false
+            proguardFiles("benchmark-rules.pro")
+
+        }
         release {
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
@@ -39,6 +47,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.datastore)
+    implementation(libs.androidx.profileinstaller)
     implementation(libs.dagger.hilt.navigation)
     implementation(libs.kotlinx.serialization)
 

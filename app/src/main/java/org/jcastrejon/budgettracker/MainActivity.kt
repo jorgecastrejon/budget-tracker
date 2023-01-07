@@ -41,5 +41,5 @@ private fun User?.asInitialRoute(): String =
     when {
         this == null -> BudgetTrackerScreen.Registration()
         authenticateEachSession -> BudgetTrackerScreen.Login()
-        else -> "temporary"
+        else -> BudgetTrackerScreen.Overview()
     }

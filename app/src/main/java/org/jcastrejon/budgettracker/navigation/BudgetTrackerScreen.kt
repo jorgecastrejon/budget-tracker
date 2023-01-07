@@ -1,6 +1,7 @@
 package org.jcastrejon.budgettracker.navigation
 
 import org.jcastrejon.features.login.navigation.LoginFeatureRoute
+import org.jcastrejon.features.overview.navigation.OverviewFeatureRoute
 import org.jcastrejon.features.register.navigation.RegistrationFeatureRoute
 
 sealed class BudgetTrackerScreen {
@@ -11,5 +12,9 @@ sealed class BudgetTrackerScreen {
 
     object Login : BudgetTrackerScreen() {
         operator fun invoke(): String = LoginFeatureRoute
+    }
+
+    object Overview : BudgetTrackerScreen() {
+        operator fun invoke(): String = OverviewFeatureRoute
     }
 }

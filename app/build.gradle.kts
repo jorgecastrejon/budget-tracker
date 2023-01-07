@@ -39,6 +39,7 @@ dependencies {
     implementation(project(":core:user"))
     implementation(project(":features:login"))
     implementation(project(":features:register"))
+    implementation(project(":features:overview"))
     implementation(project(":foundation:design-system"))
     implementation(project(":libraries:database"))
 

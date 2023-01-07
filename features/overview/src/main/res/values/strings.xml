@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="overview_bottom_bar_summary">Summary</string>
+    <string name="overview_bottom_bar_stats">Stats</string>
+    <string name="overview_bottom_bar_balance">Balance</string>
+    <string name="overview_bottom_bar_settings">Settings</string>
+    <string name="overview_bottom_bar_button">Add new transaction</string>
+    <string name="overview_top_bar_title">Overview</string>
+    <string name="overview_top_bar_action">Search transaction</string>
+</resources>
